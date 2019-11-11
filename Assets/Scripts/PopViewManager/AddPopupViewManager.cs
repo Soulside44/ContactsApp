@@ -9,7 +9,7 @@ public class AddPopupViewManager : PopupViewManager
     [SerializeField] InputField nameInputField;
     [SerializeField] InputField phoneNumberInputField;
     [SerializeField] InputField emailInputField;
-    [SerializeField] Image profilePhotoImage;
+    [SerializeField] ImageButton profilePhotoImageButton;
 
     [SerializeField] GameObject addPhotoPopupViewPrefab;
 
@@ -22,7 +22,7 @@ public class AddPopupViewManager : PopupViewManager
             = Instantiate(addPhotoPopupViewPrefab, transform.parent).GetComponent<AddPhotoPopupViewManager>();
 
         addPhotoPopupViewManager.Open(AnimationType.TYPE2);
-        addPhotoPopupViewManager.didSelectImage = (sprite) => { profilePhotoImage.sprite = sprite; };
+        addPhotoPopupViewManager.didSelectImage = (sprite) => { profilePhotoImageButton.Image = sprite; };
     }
 
     protected override void Awake()
@@ -72,9 +72,9 @@ public class AddPopupViewManager : PopupViewManager
             contact.name = name;
             contact.phoneNumber = phoneNumber;
             contact.email = email;
-            if(profilePhotoImage.sprite)
+            if(profilePhotoImageButton.Image)
             {
-                contact.profilePhotoFileName = profilePhotoImage.sprite.name;
+                contact.profilePhotoFileName = profilePhotoImageButton.Image.name;
             }
             
 
