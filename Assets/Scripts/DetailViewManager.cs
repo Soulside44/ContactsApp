@@ -31,7 +31,7 @@ public class DetailViewManager : ViewManager
     [SerializeField] InputField emailInputField;
     [SerializeField] Button saveButton;
     [SerializeField] GameObject thirdViewPrefab;
-
+    [SerializeField] Image profileImage;
     public delegate void DetailViewManagerSaveDelegate(Contact contact);
     public DetailViewManagerSaveDelegate saveDelegate;
 
@@ -65,6 +65,7 @@ public class DetailViewManager : ViewManager
                 nameInputField.text = contactValue.name;
                 phoneNumberInputField.text = contactValue.phoneNumber;
                 emailInputField.text = contactValue.email;
+                profileImage.sprite = SpriteManager.GetSprite(contactValue.profilePhotoFileName);
             }
         }
     }
