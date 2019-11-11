@@ -63,7 +63,7 @@ public class ScrollViewManager : ViewManager, ICell
                 {
                     cell.ActiveDelete = true;
                 }
-                rightNavgationViewButton.gameObject.SetActive(false);
+                rightNavgationViewButton.SetInteractable(false);
             }
             else
             {
@@ -72,8 +72,8 @@ public class ScrollViewManager : ViewManager, ICell
                 {
                     cell.ActiveDelete = false;
                 }
-                
-                rightNavgationViewButton.gameObject.SetActive(true);
+
+                rightNavgationViewButton.SetInteractable(true);
             }
         });
     }
