@@ -15,6 +15,14 @@ public class MainManager : MonoBehaviour
     // Present한 ViewManager들
     Stack<ViewManager> viewManagers = new Stack<ViewManager>();
 
+    public static MainManager Instance;
+    private void Awake()
+    {
+        if(Instance==null)
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         // Welcome 메시지 출력

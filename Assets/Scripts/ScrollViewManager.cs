@@ -39,7 +39,7 @@ public class ScrollViewManager : ViewManager, ICell
                 AddContact(contact);
 
                 // AddCell(contact, contacts.Value.contactList.Count - 1);
-
+                
                 ClearCell();
                 LoadData();
                 
@@ -169,7 +169,7 @@ public class ScrollViewManager : ViewManager, ICell
                 contacts.Value.contactList[cellIndex] = newContact;
                 
                 cell.Title = newContact.name;
-
+                cell.ProfilePhotoSprite = SpriteManager.GetSprite(newContact.profilePhotoFileName);
                 //ClearCell();
                 //LoadData();
             };
